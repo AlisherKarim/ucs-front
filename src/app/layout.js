@@ -1,4 +1,4 @@
-import { Navbar } from '@/components/Navbar'
+import { Navbar } from '@/app/components/Navbar'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className={inter.className}>
         <Navbar />
-        {children}
+        <div className="sm:container sm:mx-auto">{children}</div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
       </body>
     </html>
