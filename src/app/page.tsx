@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -9,9 +8,9 @@ export default function Home() {
         Let's make UNIST CS community better
       </h1>
       <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
-        Here at UCS we focus on computer science community of UNIST, help
-        students and other members expand their network. Together we create the
-        strongest community.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores animi,
+        aliquid quam non molestias cum et odio, perspiciatis dolore minus atque
+        reprehenderit eos voluptas assumenda sint quasi aliquam ad deleniti.
       </p>
       <Link
         href="/about"
@@ -27,9 +26,9 @@ export default function Home() {
         >
           <path
             stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
             d="M1 5h12m0 0L9 1m4 4L9 9"
           />
         </svg>

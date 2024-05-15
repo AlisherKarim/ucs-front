@@ -1,17 +1,19 @@
 "use client";
 import { loginRequest } from "../../login/apiService";
-import { useUserStore } from '../../store/userStore';
+import { useUserStore } from "../../store/userStore";
 import { Formik, useFormik } from "formik";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 interface IFormValues {
-  email: string,
-  password: string
+  email: string;
+  password: string;
 }
 
 const LoginForm = () => {
   const [isPasswordShown, setIsPasswordShown] = useState(false);
+  const router = useRouter();
   const { handleUser, user } = useUserStore();
   const {
     values,
@@ -21,7 +23,7 @@ const LoginForm = () => {
     handleBlur,
     handleSubmit,
     isSubmitting,
-    setErrors
+    setErrors,
   } = useFormik<IFormValues>({
     initialValues: {
       email: "",
@@ -40,10 +42,10 @@ const LoginForm = () => {
     onSubmit: async (values, { setSubmitting }) => {
       const data = await loginRequest(values.email, values.password);
       if (data.error != undefined) {
-        setErrors({email: 'Incorrect user credentials'})
+        setErrors({ email: "Incorrect user credentials" });
       } else {
-        handleUser(data.user)
-        // set token
+        handleUser(data.user);
+        router.push("/");
       }
       setSubmitting(false);
     },
