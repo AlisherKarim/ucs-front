@@ -2,7 +2,7 @@ import { LOCAL_STORAGE_TOKEN, LOCAL_STORAGE_USER } from "../core/constants";
 import { LOGIN } from "../core/urls";
 import { TUser } from "../types/user";
 
-export const loginRequest = (email, password) => {
+export const loginRequest = (email: string, password: string) => {
   return new Promise<{
     error: string | null;
     user: TUser;
